@@ -20,3 +20,7 @@ Se requiere:
     npm i mocha
 
     npm i chai
+    
+  Los test se corren con:
+  
+      npm test
