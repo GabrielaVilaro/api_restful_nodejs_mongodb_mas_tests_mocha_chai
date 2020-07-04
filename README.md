@@ -16,6 +16,8 @@ Se requiere:
     npm i -S express
 
     npm i -S mongodb
+    
+    npm install mongoose
 
     npm i mocha
 
