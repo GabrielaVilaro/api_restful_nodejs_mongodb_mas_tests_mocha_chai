@@ -86,8 +86,10 @@ describe('Insert a product: ',()=>{
     });
  });
 
- describe('delete the country with id 1: ',()=>{
-  it('should delete the country with id 1', (done) => {
+ //Este test elimina un producto con un id específico
+
+ describe('delete the product with id',()=>{
+  it('should delete the product with id', (done) => {
   chai.request(app)
   .get('/product')
   .end( function(err,res){
