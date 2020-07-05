@@ -1,7 +1,7 @@
 'use strict'
 const Product = require('../models/products')
 
-function getProduct(req,) {
+function getProduct(req, res) {
     let productId = req.params.productId
     Product.findById(productId, (err, product) => {
         if (err) return res.status(500).send({message:'Error al realizar la petición'})
@@ -32,7 +32,8 @@ function saveProduct(req, res){
     product.description = req.body.description
 
     product.save((err, productStored) =>{
-        if (err) res.status(500).send({message: 'Error to save data base'})
+        if (err) 
+        return res.status(500).send({message: 'Error to save data base'})
         res.status(200).send({product: productStored})
     })
 
