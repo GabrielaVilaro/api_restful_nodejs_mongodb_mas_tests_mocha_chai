@@ -1,21 +1,17 @@
-var chai = require('chai');
-let express = require('express');
-var chaiHttp = require('chai-http');
-var mongoose = require("mongoose");
+process.env.NODE_ENV = 'test';
+
+let chai = require('chai');
+let chaiHttp = require('chai-http');
 const expect = require('chai').expect;
-var server = require('../server');
-const app = require('../app');
-var products = require('../models/products')
+chai.use(chaiHttp);
+const app = require('../app')
 const Product = require('../models/products')
-var products = require('../controllers/product')
-var mocha = require('mocha')
 
-
-describe('Insert a country: ',()=>{
-    it('should insert a country', (done) => {
-    chai.use(app)
-    .post('/api/product')
-    .send({name:"nokia", price: 892, category: "phones", description: 'cel phone'})
+describe('Insert a product: ',()=>{
+    it('should insert a product', (done) => {
+    chai.request(app)
+    .post('/product')
+    .send({name:'cel', price: 1200, category: 'phones', description: 'now'})
     .end( function(err,res){
     console.log(res.body)
     expect(res).to.have.status(200);
@@ -23,3 +19,5 @@ describe('Insert a country: ',()=>{
     });
     });
    });
+   
+   
