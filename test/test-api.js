@@ -85,3 +85,27 @@ describe('Insert a product: ',()=>{
       });
     });
  });
+
+ describe('delete the country with id 1: ',()=>{
+  it('should delete the country with id 1', (done) => {
+  chai.request(app)
+  .get('/product')
+  .end( function(err,res){
+  console.log(res.body)
+  expect(res).to.have.status(200);
+  chai.request(app)
+  .delete('/product/5f0237ff240876229393af55')
+  .end( function(err,res){
+  console.log(res.body)
+  expect(res).to.have.status(200);
+  chai.request(app)
+  .get('/product')
+  .end( function(err,res){
+  console.log(res.body)
+  expect(res).to.have.status(200);
+  done();
+          });
+        });
+      });
+    });
+ });
