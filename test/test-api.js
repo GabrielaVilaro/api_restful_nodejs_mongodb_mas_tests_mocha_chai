@@ -17,7 +17,7 @@ describe('Insert a product: ',()=>{
     it('should insert a product', (done) => {
     chai.request(app)
     .post('/product')
-    .send({name:'cel', price: 1200, category: 'phones', description: 'new cel phone'})
+    .send({name:'cel', price: 30000, category: 'phones', description: 'new cel phone'})
     .end( function(err,res){
     console.log(res.body)
     expect(res).to.have.status(200);
@@ -32,7 +32,7 @@ describe('Insert a product: ',()=>{
     it('should receive an error', (done) => {
     chai.request(app)
     .post('/product')
-    .send({name:'computer', price: 12000, category: 'others', description: 'this product no exist'})
+    .send({name:'computer', price: 30000, category: 'others', description: 'this product no exist'})
     .end( function(err,res){
     console.log(res.body)
     expect(res).to.have.status(500);
@@ -68,3 +68,20 @@ describe('Insert a product: ',()=>{
        });
     });
 });
+
+
+
+//Este test actualiza el precio del producto con un id específico
+
+  describe('update the price of product with id 1: ',()=>{
+    it('should update the price of product', (done) => {
+    chai.request(app)
+    .put('/product/5f0210e7c9a143152a345590')
+    .send({'price': 300})
+    .end( function(err,res){
+    console.log(res.body)
+    expect(res).to.have.status(200);
+    done();
+      });
+    });
+ });
