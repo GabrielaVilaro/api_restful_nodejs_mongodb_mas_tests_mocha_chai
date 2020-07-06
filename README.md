@@ -17,6 +17,8 @@ Se requiere:
 
     npm i -S mongodb
     
+    mongo
+    
     npm start
     
     npm install mongoose
