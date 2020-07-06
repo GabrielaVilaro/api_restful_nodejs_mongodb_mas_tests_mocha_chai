@@ -89,6 +89,7 @@ describe('Insert a product: ',()=>{
  //Este test elimina un producto con un id específico
 
  describe('delete the product with id',()=>{
+   var id = '5f0215d044afa717734c4fac'
   it('should delete the product with id', (done) => {
   chai.request(app)
   .get('/product')
@@ -96,7 +97,7 @@ describe('Insert a product: ',()=>{
   console.log(res.body)
   expect(res).to.have.status(200);
   chai.request(app)
-  .delete('/product/5f0237ff240876229393af55')
+  .delete(`/product/${id}`)
   .end( function(err,res){
   console.log(res.body)
   expect(res).to.have.status(200);
