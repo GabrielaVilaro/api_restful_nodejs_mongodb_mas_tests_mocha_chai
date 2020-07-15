@@ -1,4 +1,4 @@
-# test_node_mocha_chai_api_restfull
+# test_node_mocha_chai_api_restful
 
 Primero creé un API REST Json con node js, mongoDB, express para después poder hacer los tests de práctica. Esta parte está hecha 
 con un tutorial https://www.youtube.com/playlist?list=PLUdlARNXMVkk7E88zOrphPyGdS50Tadlr modifiqué y agregué algunas cosas.
